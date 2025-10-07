@@ -14,25 +14,25 @@
   {{-- Accueil --}}
   <a href="{{ route('accueil') }}"
      class="'border-b-2 border-white pb-1 font-normal' : 'opacity-70 hover:opacity-100' }}">
-     <span class="font-bold mr-2">00</span> 
+     <span class="font-bold mr-2">00 Accueil</span> 
   </a>
 
   {{-- Destination --}}
   <a href="{{ route('destination') }}"
      class=" 'border-b-2 border-white pb-1 font-normal' : 'opacity-70 hover:opacity-100' }}">
-     <span class="font-bold mr-2">01</span> 
+     <span class="font-bold mr-2">01 Destination</span> 
   </a>
 
   {{-- Équipage --}}
   <a href="{{ route('equipage') }}"
      class=" 'border-b-2 border-white pb-1 font-normal' : 'opacity-70 hover:opacity-100' }}">
-     <span class="font-bold mr-2">02</span> 
+     <span class="font-bold mr-2">02 Equipage</span> 
   </a>
 
   {{-- Technologie --}}
   <a href="{{ route('technologie') }}"
      class=" 'border-b-2 border-white pb-1 font-normal' : 'opacity-70 hover:opacity-100' }}">
-     <span class="font-bold mr-2">03</span> 
+     <span class="font-bold mr-2">03 Technologie</span> 
   </a>
 </nav>
 
@@ -55,7 +55,7 @@
   <button id="close-btn"
           aria-label="Fermer le menu mobile"
           class="self-end text-3xl mb-12">✖</button>
-
+</nav>
 
 {{-- ============================ --}}
 {{-- SCRIPT DU MENU BURGER --}}

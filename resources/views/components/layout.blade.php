@@ -9,7 +9,7 @@
    
 </head>
 
-<body class="min-h-screen bg-[url('{{ $bgImage }}')] bg-cover bg-center ">
+<body style="background-image: url('{{ $bgImage }}')" class="min-h-screen  bg-cover bg-center ">
 
  
         {{ $slot }}

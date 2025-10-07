@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('accueil');
+    return view('vue.accueil');
 })->name('accueil');
 
 Route::get('destination', function () {
