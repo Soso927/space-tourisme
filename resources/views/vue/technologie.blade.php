@@ -11,7 +11,7 @@
         </p>
           <!-- Image de fusée -->
         <img src="{{ asset('images/image-launch-vehicle-portrait.jpg') }}" alt="Douglas Hurley" class="w-40 h-auto  mb-8">
-            <!-- Douglas hurley -->
+            
              <!-- cercle numéroté  -->
      <div id="cercle-numerote" class="flex justify-center items-center gap-6  py-8">
     <!-- cercle actif -->
