@@ -41,7 +41,7 @@
   <button id="menu-btn"
           aria-label="Ouvrir le menu mobile"
           aria-expanded="false"
-          class="sm:hidden text-white text-3xl">☰</button>
+          class="md:hidden text-white text-3xl">☰</button>
 </header>
 
 
