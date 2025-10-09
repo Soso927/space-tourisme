@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use illuminate\Support\Facades\Session;
+
 
 Route::get('/', function () {
     return view('vue.accueil');
@@ -17,3 +20,10 @@ Route::get('equipage', function () {
 Route::get('technologie', function () {
     return view('vue.technologie');
 })->name('technologie');
+
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'fr'])) {
+        Session::put('locale', $locale);
+    }
+    return redirect()->back();
+});
