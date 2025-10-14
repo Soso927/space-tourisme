@@ -6,9 +6,9 @@
     </x-slot:bgImage>
     
     <x-header></x-header>
-    <div class="absolute top-4 left-4 text-white bg-black/40 px-3 py-1 rounded">
+    {{-- <div class="absolute top-4 left-4 text-white bg-black/40 px-3 py-1 rounded">
     Langue actuelle : {{ app()->getLocale() }}
-</div>
+</div> --}}
 
 
 <main class="font-bellefair flex flex-col items-center justify-center min-h-[80vh] text-center text-white px-4 mobile:px-6 tablet:px-8 desktop:px-12 py-12">
