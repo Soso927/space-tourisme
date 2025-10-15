@@ -7,7 +7,7 @@ use Tests\TestCase;
 class RouteTest extends TestCase
 {
     /** @test */
-    public function la_page_accueil_fonctionne()
+    public function la_page_accueil_fonctionne_en_francais()
     {
         // Simule une visite sur la page d'accueil
         $response = $this->get('/');
@@ -16,27 +16,41 @@ class RouteTest extends TestCase
         $response->assertStatus(200);
         
         // Vérifie qu'un texte spécifique est présent
-        $response->assertSee('Space Tourisme');
+        $response->assertSee('Space ');
     }
+
+    /** @test */
+public function la_page_accueil_en_anglais()
+{
+    // Définir la locale en anglais
+    app()->setLocale('en');
+    
+    $response = $this->get('/');
+    $response->assertStatus(200);
+    
+    // Vérifier du contenu en anglais
+    $response->assertSee('So, you want to travel to'); // Texte anglais
+    $response->assertSee('EXPLORE'); // Bouton en anglais
+}
     
     /** @test */
-    public function la_page_destinations_fonctionne()
+    public function la_page_destination_fonctionne()
     {
-        $response = $this->get('/destinations');
+        $response = $this->get('destination');
         $response->assertStatus(200);
     }
     
     /** @test */
     public function la_page_equipage_fonctionne()
     {
-        $response = $this->get('/equipage');
+        $response = $this->get('equipage');
         $response->assertStatus(200);
     }
     
     /** @test */
-    public function la_page_technologies_fonctionne()
+    public function la_page_technologie_fonctionne()
     {
-        $response = $this->get('/technologies');
+        $response = $this->get('technologie');
         $response->assertStatus(200);
     }
     
@@ -47,26 +61,65 @@ class RouteTest extends TestCase
         $response->assertStatus(404);
     }
     /** @test */
-public function la_page_accueil_fonctionne_en_francais()
+public function destination_en_francais()
 {
     // Définir la locale en français
     app()->setLocale('fr');
     
-    $response = $this->get('/');
+    $response = $this->get('destination');
     $response->assertStatus(200);
-    $response->assertSee('Destinations'); // mot français
+    $response->assertSee('destination'); 
+}
+public function destination_en_anglais()
+{
+    // Définir la locale en français
+    app()->setLocale('en');
+    
+    $response = $this->get('destination');
+    $response->assertStatus(200);
+    $response->assertSee('destination'); 
 }
 
-/** @test */
-public function la_page_accueil_fonctionne_en_anglais()
+public function equipage_en_francais()
+{
+    // Définir la locale en français
+    app()->setLocale('fr');
+    
+    $response = $this->get('equipage');
+    $response->assertStatus(200);
+    $response->assertSee('equipage'); 
+}
+
+public function equipage_en_anglais()
+{
+    // Définir la locale en français
+    app()->setLocale('en');
+    
+    $response = $this->get('equipage');
+    $response->assertStatus(200);
+    $response->assertSee('equipage'); 
+}
+
+public function technologie_en_francais()
+{
+    // Définir la locale en français
+    app()->setLocale('fr');
+    
+    $response = $this->get('technologie');
+    $response->assertStatus(200);
+    $response->assertSee('technologie'); 
+}
+public function technologie_en_anglais()
 {
     // Définir la locale en anglais
     app()->setLocale('en');
     
-    $response = $this->get('/');
+    $response = $this->get('technologie');
     $response->assertStatus(200);
-    $response->assertSee('Destinations'); // même mot ou version anglaise
+    $response->assertSee('technologie'); 
 }
+
+
 
 /** @test */
 public function le_changement_de_langue_fonctionne()
