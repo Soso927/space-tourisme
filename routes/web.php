@@ -21,9 +21,10 @@ Route::get('technologie', function () {
     return view('vue.technologie');
 })->name('technologie');
 
+
 Route::get('lang/{locale}', function ($locale) {
-    if (in_array($locale, ['en', 'fr'])) {
+    if (in_array($locale, ['fr', 'en'])) {
         Session::put('locale', $locale);
     }
-    return redirect()->back();
-});
+    return redirect()->back();});
+
