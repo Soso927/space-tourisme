@@ -1,7 +1,4 @@
 <x-app-layout>
-        <x-slot:bgImage>
-        {{ asset('images/background-destination.png') }}
-    </x-slot:bgImage>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-between mb-4">

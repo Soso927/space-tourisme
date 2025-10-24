@@ -3,19 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Planet extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'name',
-        'description',
-        'distance',
-        'travel_time',
-        'image',
-        'is_published'
+        'name', 'slug', 'description', 'distance', 'durée', 'image_path',
     ];
 
-    protected $casts = [
-        'is_published' => 'boolean',
-    ];
+    // Pour les URLs publiques si tu utilises le slug plus tard
+    public function getRouteKeyName()
+    {
+        return 'id'; // ou 'slug' si tu veux binder par slug côté public
+    }
 }
