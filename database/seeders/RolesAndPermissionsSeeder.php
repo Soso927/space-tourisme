@@ -16,7 +16,7 @@ class RolesAndPermissionsSeeder extends Seeder
         // Permissions liées aux planetes
         $perms = [
             'planets.view',
-            'planets.create',
+            'equipage.create',
             'planets.edit',
             'planets.delete',
             'planets.publish',
@@ -28,10 +28,10 @@ class RolesAndPermissionsSeeder extends Seeder
         }
 
         // Rôles
-        $admin = Role::firstOrCreate(['name' => 'admin']);
-        $editor = Role::firstOrCreate(['name' => 'editor']);
-        $author = Role::firstOrCreate(['name' => 'author']);
-        $viewer = Role::firstOrCreate(['name' => 'viewer']);
+        $admin = Role::firstOrCreate(['name' => 'manage planets']);
+        $editor = Role::firstOrCreate(['name' => 'manage equipage']);
+        $author = Role::firstOrCreate(['name' => 'manage technologies']);
+        $viewer = Role::firstOrCreate(['name' => 'manage users']);
 
         // Matrice rôles → permissions
         $admin->syncPermissions(Permission::all());
